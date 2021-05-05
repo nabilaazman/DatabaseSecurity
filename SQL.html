@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+<html lang="en">
+<title>Database Security</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="topnav.css">
+<link rel="stylesheet" href="sidenav.css">
+<link rel="stylesheet" href="btn-group.css">
+<link rel="stylesheet" href="table.css">
+<!--topbar -->
+
+<body>
+
+<div class="topnav">
+
+
+  <a class="active" href="intro.html" >D A T A B A S E </a>
+  <a class="active" href="intro.html"> S E C U R I T Y</a>
+
+  <div class="topnav-right">
+  <a href="home.html">Home</a>
+  <a href="lesson.html">Lesson</a>
+  </div>
+
+</div>
+<!--sidebar-->
+<div class="tab">
+  <button class="tablinks" onclick="openContent(event, 'intro')" id="defaultOpen" ><a href="home.html">INTRODUCTION</button></a>
+  <button class="dropdown-btn">DATABASE THREAT<i class="fa fa-caret-down"></i></button>
+  <div class="dropdown-container">
+    <a href="malware.html" >Malware</a>
+    <a href="WeakAuditTrail.html">Weak Audit Trail</a>
+    <a href="SQL.html">Injection</a>
+    <a href="DOS.html">Denial of Service</a>
+    <a href="WeakAut.html">Weak Authentication</a>
+    <a href="SDE.html">Sensitive Data Exposure</a>
+    <a href="Exces-Priv.html">Excessive Privileges</a>
+    <a href="USD.html">Unmanaged Sensitive Data </a>
+
+    </div>
+
+    <button class="tablinks" onclick="openContent(event, 'controlmethod')"><a href="controlmethod.html">CONTROL METHOD</button></a>
+    <button class="tablinks" onclick="openContent(event, 'lesson')"><a href="lesson.html">LESSON</button></a>
+
+  </div>
+
+  <!--content-->
+  <div class="table">
+
+<div class="row">
+ <div class="column" style="background-color:lightgrey;">
+   <h2 style="text-align:center">INJECTION </h2>
+
+
+   <p style="text-align:center">SQL injection, also known as SQLI, is a common attack vector that uses malicious SQL code for backend database manipulation to access information that was not intended to be displayed. This information may include any number of items, including sensitive company data, user lists or private customer details.
+
+     Injection flaws, such as SQL, NoSQL, OS, and LDAP injection, occur when untrusted data is sent
+     to an interpreter as part of a command or query. The attacker’s hostile data can trick the
+     interpreter into executing unintended commands or accessing data without proper authorization</p>
+<p>There are two types of input injection:</p>
+
+<ul>1. SQL Injection</ul>
+<ul>2. NoSQL Injection.</ul>
+<p>SQL Injection: Targets the tradition database system. It attacks usually involve injecting unauthorized statements into the input fields of applications.
+</p>
+<p>NoSQL Injection: Targets big data platforms. This type involves inserting malicious statements into big data components like Hive, MapReduce. In SQL and NoSQL successful input injection attack can give attacker unrestricted access to an entire database.
+</p>
+
+
+</p>
+ </div>
+ <br><br>
+ <div class="column" style="background-color:#bbb;">
+   <h2 style="text-align:center">Example Attack Scenario :</h2>
+<p> An application uses untrusted data in the construction of the following vulnerable SQL call:</p>
+<li></li>
+ </div>
+ <br>
+ <div class="column" style="background-color:#bbb;">
+   <h2 style="text-align:center">Countermeasure of Input Injection</h2>
+<p> Preventing injection requires keeping data separate from commands and queries</p>
+<li>The preferred option is to use a safe API, which avoids the use of the interpreter entirely or provides a parameterized interface,
+or migrate to use Object Relational Mapping Tools (ORMs). </li>
+<li>Use positive or "whitelist" server-side input validation. This is not a complete defense as many applications require special
+characters, such as text areas or APIs for mobile applications.</li>
+<li>For any residual dynamic queries, escape special characters using the specific escape syntax for that interpreter.
+Note: SQL structure such as table names, column names, and
+so on cannot be escaped, and thus user-supplied structure
+names are dangerous. This is a common issue in report-writing
+software.</li>
+ </div>
+</div>
+  <!--js-->
+  <script>
+  function openContent(evt, contentName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(contentName).style.display = "block";
+    evt.currentTarget.className += " active";
+  }
+
+  // Get the element with id="defaultOpen" and click on it
+  document.getElementById("defaultOpen").click();
+
+  /* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+  var dropdown = document.getElementsByClassName("dropdown-btn");
+  var i;
+
+  for (i = 0; i < dropdown.length; i++) {
+    dropdown[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var dropdownContent = this.nextElementSibling;
+    if (dropdownContent.style.display === "block") {
+    dropdownContent.style.display = "none";
+    } else {
+    dropdownContent.style.display = "block";
+    }
+    });
+  }
+
+
+  </script>
+
+
+  </body>
+  </html>

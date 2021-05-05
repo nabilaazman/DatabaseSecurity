@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+<html lang="en">
+<title>Database Security</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="topnav.css">
+<link rel="stylesheet" href="sidenav.css">
+<link rel="stylesheet" href="btn-group.css">
+<link rel="stylesheet" href="table.css">
+<link rel="stylesheet" href="center.css">
+<!--topbar -->
+
+</head>
+<body>
+
+<div class="topnav">
+
+
+  <a class="active" href="intro.html" >D A T A B A S E </a>
+  <a class="active" href="intro.html"> S E C U R I T Y</a>
+
+  <div class="topnav-right">
+  <a href="home.html">Home</a>
+  <a href="lesson.html">Lesson</a>
+  </div>
+
+</div>
+<!--sidebar-->
+<div class="tab">
+  <button class="tablinks" onclick="openContent(event, 'intro')" id="defaultOpen" ><a href="home.html">INTRODUCTION</button></a>
+  <button class="dropdown-btn">DATABASE THREAT<i class="fa fa-caret-down"></i></button>
+  <div class="dropdown-container">
+    <a href="malware.html" >Malware</a>
+    <a href="WeakAuditTrail.html">Weak Audit Trail</a>
+    <a href="SQL.html">Injection</a>
+    <a href="DOS.html">Denial of Service</a>
+    <a href="WeakAut.html">Weak Authentication</a>
+    <a href="SDE.html">Sensitive Data Exposure</a>
+    <a href="Exces-Priv.html">Privilege Database Abused</a>
+    <a href="USD.html">Unmanaged Sensitive Data </a>
+
+    </div>
+
+    <button class="tablinks" onclick="openContent(event, 'controlmethod')"><a href="controlmethod.html">CONTROL METHOD</button></a>
+    <button class="tablinks" onclick="openContent(event, 'lesson')"><a href="lesson.html">LESSON</button></a>
+
+  </div>
+
+  <!--content-->
+  <div class="table">
+
+<div class="row">
+ <div class="column" style="background-color:lightgrey;">
+   <h2 style="text-align:center">DENIAL OF SERVICE</h2>
+
+   <li >Denial of Service (DOS) is a general attack category in which access to network applications or data is denied
+to intended users. Denial of service (DOS) conditions may be created via many techniques - many of which are
+related to previously mentioned vulnerabilities.</li><br>
+<li>Victims of DoS attacks often target web servers of high-profile organizations such as banking, commerce, and media companies, or government and trade organizations. Though DoS attacks do not typically result in the theft or loss of significant information or other assets, they can cost the victim a great deal of time and money to handle.</li>
+<br><iframe width="450" class="center" height="320"src="https://www.youtube.com/embed/OWLGUgiz_eE"></iframe>
+<p style="text-align:center">There are two general methods of DoS attacks: flooding services or crashing services. </p>
+  <p>Flood attacks occur when the system receives too much traffic for the server to buffer, causing them to slow down and eventually stop. Popular flood attacks include:</p>
+
+<li><b>Buffer overflow attacks</b> – the most common DoS attack. The concept is to send more traffic to a network address than the programmers have built the system to handle. It includes the attacks listed below, in addition to others that are designed to exploit bugs specific to certain applications or networks .</li><br>
+<li><b>ICMP flood </b>– leverages misconfigured network devices by sending spoofed packets that ping every computer on the targeted network, instead of just one specific machine. The network is then triggered to amplify the traffic. This attack is also known as the smurf attack or ping of death.</li><br>
+<li><b>SYN flood </b>– sends a request to connect to a server, but never completes the handshake. Continues until all open ports are saturated with requests and none are available for legitimate users to connect to.</li>
+
+<h4>An additional type of DoS attack is the Distributed Denial of Service (DDoS) attack.</h4>
+<img src="dos.webp" alt="dos" style="width:50%;" class="center">
+<p style="text-align:center">A DDoS attack occurs when multiple systems orchestrate a synchronized DoS attack to a single target. The essential difference is that instead of being attacked from one location, the target is attacked from many locations at once.</p>
+   <p>The distribution of hosts that defines a DDoS provide the attacker multiple advantages:</p>
+
+<li>He can leverage the greater volume of machine to execute a seriously disruptive attack</li>
+<li>The location of the attack is difficult to detect due to the random distribution of attacking systems (often worldwide)</li>
+<li>It is more difficult to shut down multiple machines than one..</li>
+<li>The true attacking party is very difficult to identify, as they are disguised behind many (mostly compromised) systems</li>
+ </div>
+ <br><br>
+ <div class="column" style="background-color:#bbb;">
+   <h2 style="text-align:center">Countermeasure</h2>
+<p>Countermeasures for DoS and DDoS attacks are:</p>
+
+<ul>1. Intrusion Detection Systems (IDS) and an Intrusion Protection Systems (IPS).</ul>
+<ul>2. Strong anti-virus and anti-spyware software on all systems with Internet connectivity.</ul>
+<ul>3. File and folder hashes on system files and folders to identify if they have been compromised.</ul>
+<ul>4. Reverse DNS lookup to verify the source address.</ul>
+<ul>5. External firewalls with the following filters:</ul>
+  <dl>
+    <dd> - Ingress filters that specify any inbound frame must have a public IP address from outside of the organization's LAN.</dd>
+    <dd>- Egress filters that specify any outbound frame must have a private IP address within the organization's LAN.</dd>
+    <dd>- Address filter to prevent traffic from specific attackers (if known).</dd>
+  </dl>
+<ul>6. Once a DoS attack begins, you can minimize its effects by implementing filters to block unwanted traffic. You can also contact your ISP to implement filtering closer to the source and reduce the bandwidth used by the attack. </ul></ul>
+<ul>7. Hardening practices on all machines, especially publicly exposed servers and directory and resource servers.</ul>
+ </div>
+
+ <div class="column" style="background-color:#bbb; ">
+   <h5 style="text-align:center">Source : </h5>
+   <p style="text-align:center">: https://sites.google.com/a/pccare.vn/it/security-pages/dos-attacks-and-countermeasures</p>
+   <p style="text-align:center">: https://www.cloudflare.com/learning/ddos/glossary/denial-of-service/</p>
+
+  </div>
+
+</div>
+  <!--js-->
+  <script>
+  function openContent(evt, contentName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(contentName).style.display = "block";
+    evt.currentTarget.className += " active";
+  }
+
+  // Get the element with id="defaultOpen" and click on it
+  document.getElementById("defaultOpen").click();
+
+  /* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+  var dropdown = document.getElementsByClassName("dropdown-btn");
+  var i;
+
+  for (i = 0; i < dropdown.length; i++) {
+    dropdown[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var dropdownContent = this.nextElementSibling;
+    if (dropdownContent.style.display === "block") {
+    dropdownContent.style.display = "none";
+    } else {
+    dropdownContent.style.display = "block";
+    }
+    });
+  }
+
+
+  </script>
+
+
+  </body>
+  </html>
